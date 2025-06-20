@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    vector<int> firstVector = {1, 2, 3, 4, 5};
+    vector<int> firstVector = {1, 2, 3, 2, 4, 5};
     // vector<int> secondVector;
 
     // secondVector = firstVector;
@@ -19,11 +19,24 @@ int main()
     //     cout << x << " ";
     // }
 
-    firstVector.insert(firstVector.begin() + 2, 100);
+    // firstVector.insert(firstVector.begin() + 2, 100);
 
-    for(int x : firstVector){
-        cout << x << " ";
+    // replace(firstVector.begin(), firstVector.end(), 2, 100);
+    auto it = find(firstVector.begin(), firstVector.end(), 100);
+
+    if (it == firstVector.end())
+    {
+        cout << "Not found";
     }
+    else
+    {
+        cout << "Found";
+    }
+
+    // for (int x : firstVector)
+    // {
+    //     cout << x << " ";
+    // }
 
     return 0;
 }
